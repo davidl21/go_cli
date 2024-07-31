@@ -6,6 +6,8 @@ import (
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 type Weather struct {
@@ -71,6 +73,13 @@ func main() {
 		if date.Before(time.Now()) {
 			continue
 		}
-		fmt.Printf("%s - %.0fF, %.0f%%, %s\n", date.Format("03:04"), hour.TempF, hour.ChanceOfRain, hour.Condition.Text)
+		message := fmt.Sprintf("%s - %.0fF, %.0f%%, %s\n", date.Format("03:04"), hour.TempF, hour.ChanceOfRain, hour.Condition.Text)
+		
+		// highlight hours with greater than 60% chance of rain
+		if hour.ChanceOfRain < 60 {
+			fmt.Print(message)
+		} else {
+			color.Red(message)
+		}
 	}
 }
