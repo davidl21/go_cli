@@ -1,10 +1,10 @@
-# Project Title
+# Go Weather CLI
 
-Simple overview of use/purpose.
+Get weather forecasts in your terminal!
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This is a CLI built in Go that fetches data from WeatherAPI 
 
 ## Getting Started
 
