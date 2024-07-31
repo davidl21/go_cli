@@ -66,6 +66,11 @@ func main() {
 
 	for _, hour := range hours {
 		date := time.Unix(hour.TimeEpoch, 0)
+
+		// only display future hours
+		if date.Before(time.Now()) {
+			continue
+		}
 		fmt.Printf("%s - %.0fF, %.0f, %s\n", date.Format("03:04"), hour.TempF, hour.ChanceOfRain, hour.Condition.Text)
 	}
 }
