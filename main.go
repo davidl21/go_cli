@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/fatih/color"
@@ -38,7 +39,15 @@ type Weather struct {
 }
 
 func main() {
-	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=99cdb051202a41f0b9b221441243107&q=94706&days=1&aqi=no&alerts=no")
+	// sets default value to Albany, CA
+	q := "94706"
+
+	if len(os.Args) >= 2 {
+		// set 'q' location to user-specific location
+		q = os.Args[1]
+	}
+
+	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=99cdb051202a41f0b9b221441243107&q=" + q + "&days=1&aqi=no&alerts=no")
 
 	if err != nil {
 		panic(err)
