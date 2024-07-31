@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"time"
 )
 
 type Weather struct {
@@ -60,6 +61,11 @@ func main() {
 
 	//fmt.Println(weather)
 
-	location, current, _ := weather.Location, weather.Current, weather.Forecast.Forecastday[0].Hour
+	location, current, hours := weather.Location, weather.Current, weather.Forecast.Forecastday[0].Hour
 	fmt.Printf("%s, %s: %.0fF, %s\n", location.Name, location.Country, current.TempF, current.Condition.Text)
+
+	for _, hour := range hours {
+		date := time.Unix(hour.TimeEpoch, 0)
+		fmt.Printf("%s - %.0fF, %.0f, %s\n", date.Format("03:04"), hour.TempF, hour.ChanceOfRain, hour.Condition.Text)
+	}
 }
