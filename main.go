@@ -12,14 +12,29 @@ type Weather struct {
 		Country string `json:"country"`
 	} `json:"location"`
 
-	Country struct {
-		Name string `json:"name"`
-		Country string `json:"country"`
-	} `json:"country"`
+	Current struct {
+		TempF float64 `json:"temp_f"`
+		Condition struct {
+			Text string `json:"text"`
+		}`json:"condition"`
+	} `json:"current"`
+
+	Forecast struct {
+		Forecastday []struct {
+			Hour []struct {
+				TimeEpoch int64 `json:"time_epoch"`
+				TempF float64 `json:"temp_f"`
+				Condition struct {
+					Text string `json:"text"`
+				} `json:"condition"`
+				ChanceOfRain float64 `json:"chance_of_rain"`
+			} `json:"hour"`
+		} `json:"forecastday"`
+	} `json:"forecast"`
 }
 
 func main() {
-	res, err := http.Get("")
+	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=99cdb051202a41f0b9b221441243107&q=94706&days=1&aqi=no&alerts=no")
 
 	if err != nil {
 		panic(err)
@@ -35,5 +50,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(string(body))
+	// Map JSON response to weather struct
+	fmt.Println(body)
 }
