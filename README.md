@@ -6,6 +6,10 @@ Get weather forecasts in your terminal!
 
 This is a CLI built in Go that fetches data from WeatherAPI and displays it in your terminal. Rainer days will be highlighted in red, or any color that you'd like. Location can be specified as well, but the program defaults to Albany, CA. 
 
+## Screenshots
+
+* ![Manhattan Forecast](https://ibb.co/sjvYYRC)
+
 ### Dependencies
 
 * Go
