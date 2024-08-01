@@ -8,8 +8,10 @@ This is a CLI built in Go that fetches data from WeatherAPI and displays it in y
 
 ## Screenshots
 
-* ![gocli_manhattan](https://github.com/user-attachments/assets/f8fd3b16-2416-4540-9ea9-58ed5f5f609e)
-
+* `go run main.go Manhattan`
+  * ![gocli_manhattan](https://github.com/user-attachments/assets/f8fd3b16-2416-4540-9ea9-58ed5f5f609e)
+* `go run main.go Redlands, CA`
+  * ![gocli_redlands](https://github.com/user-attachments/assets/6738ff35-7ac1-4829-bd8d-df0cf812188d)
 
 ### Dependencies
 
