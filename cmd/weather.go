@@ -48,7 +48,10 @@ func Forecast(loc string) {
 		q = os.Args[2]
 	}
 
-	url := "http://api.weatherapi.com/v1/forecast.json?key=99cdb051202a41f0b9b221441243107&q=" + q + "&days=1&aqi=no&alerts=no"
+	// INSERT API KEY HERE
+	key := ""
+	url := "http://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" + q + "&days=1&aqi=no&alerts=no"
+
 	fmt.Println("test", url)
 
 	res, err := http.Get(url)
