@@ -1,62 +1,35 @@
-# Go Weather CLI
+# 🌧️ Go Weather CLI 🌧️
 
 Get weather forecasts in your terminal!
 
 ## Description
 
-This is a CLI built in Go that fetches data from WeatherAPI 
-
-## Getting Started
+This is a CLI built in Go that fetches data from WeatherAPI and displays it in your terminal. Rainer days will be highlighted in red, or any color that you'd like. Location can be specified as well, but the program defaults to Albany, CA. 
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Go
+* Free API key from https://www.weatherapi.com/
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Clone the repository with `git clone https://github.com/davidl21/go_cli.git`
+* Install all dependencies by typing `go mod tidy`
+* Insert API key into weather.go
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+* In terminal and the go_cli directory, run `go run main.go forecast`.
+* To specify a location, run `go run main.go forecast {location}`, replacing location with your specified location. 
 
-## Help
+## Customization
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* If you want to change the rain percentage threshold for changing the text color, you can change the value of `rain_threshold` in weather.go.
+* If you want to change the text highlight color for rainy days, you can use a different color function in weather.go from `github.com/fatih/color`. By default, the CLI uses `color.Red()` for rainy days. 
 
 ## Authors
 
-Contributors names and contact info
+Please contact me for any questions! 
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+davidl21@berkeley.edu
+[linkedin.com/](https://www.linkedin.com/in/davidl21/)
