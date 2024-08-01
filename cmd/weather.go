@@ -92,7 +92,10 @@ func Forecast(loc string) {
 		message := fmt.Sprintf("%s - %.0fF, %.0f%%, %s\n", date.Format("03:04"), hour.TempF, hour.ChanceOfRain, hour.Condition.Text)
 		
 		// highlight hours with greater than 60% chance of rain
-		if hour.ChanceOfRain < 60 {
+
+		// edit this to change rain threshold, must be a float64
+		rain_threshold := 60.0
+		if hour.ChanceOfRain < rain_threshold {
 			fmt.Print(message)
 		} else {
 			color.Red(message)
