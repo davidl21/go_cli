@@ -8,7 +8,8 @@ This is a CLI built in Go that fetches data from WeatherAPI and displays it in y
 
 ## Screenshots
 
-* ![Manhattan Forecast](https://ibb.co/sjvYYRC)
+* ![gocli_manhattan](https://github.com/user-attachments/assets/f8fd3b16-2416-4540-9ea9-58ed5f5f609e)
+
 
 ### Dependencies
 
