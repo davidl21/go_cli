@@ -52,8 +52,6 @@ func Forecast(loc string) {
 	key := ""
 	url := "http://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" + q + "&days=1&aqi=no&alerts=no"
 
-	fmt.Println("test", url)
-
 	res, err := http.Get(url)
 
 	if err != nil {
